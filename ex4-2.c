@@ -30,6 +30,7 @@ double atof(const char *str) {
           value += (*str - '0') * factor;
     } else {
         value = value * 10.0 + (*str - '0');
+        //In ASCII encoding, digits '0' through '9' have consecutive values. For example, the ASCII value of '0' is 48, and '1' is 49, '2' is 50, and so forth. By subtracting the ASCII value of '0' (48) from the ASCII value of the digit character, you get the numerical value of the digit. For example, '3' - '0' results in 3.
     }
   }
   str++;
