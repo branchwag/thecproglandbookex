@@ -71,7 +71,7 @@ int main(void) {
   float x;
   int result;
 
-    printf("Enter floating-point numbers (end with Ctrl+D or Ctrl+Z):\n");
+    printf("Enter floating-point numbers (end with Ctrl+D or Ctrl+Z for EOF indication):\n");
     while ((result = getfloat(&x)) != EOF) {
         if (result == 0) {
             printf("Invalid input\n");
