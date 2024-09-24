@@ -19,8 +19,8 @@ int isVariableChar(char c);
 void printGroupedVarNames();
 
 int main(int argc, char *argv[]) {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: %s <prefix_length>\n", argv[0]);
+    if (argc != 3) {
+        fprintf(stderr, "Usage: %s <prefix_length> <source_file.c>\n", argv[0]);
         return 1;
     }
 
@@ -30,7 +30,7 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    FILE *file = fopen("source.c", "r"); // Adjust this to your source file name
+    FILE *file = fopen(argv[2], "r"); // Adjust this to your source file name
     if (!file) {
         perror("Could not open file");
         return 1;
@@ -52,7 +52,7 @@ void extractVarNames(FILE *file) {
 
     while ((c = fgetc(file)) != EOF) {
         if (c == '"') {
-            inString = !inString;
+            inString = !inString; //changes val to 1
             continue;
         }
 
